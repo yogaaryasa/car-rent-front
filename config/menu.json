@@ -5,12 +5,8 @@
       "url": "/"
     },
     {
-      "name": "Blog",
+      "name": "Car List",
       "url": "/blogs"
-    },
-    {
-      "name": "Pricing",
-      "url": "/pricing"
     },
     {
       "name": "Contact",
@@ -19,6 +15,13 @@
     {
       "name": "FAQ",
       "url": "/faq"
+    }
+  ],
+  "Deleted JSOM" :
+  [
+    {
+      "name": "Car List",
+      "url": "/pricing"
     }
   ],
   "footer": [

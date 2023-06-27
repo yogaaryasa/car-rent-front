@@ -1,7 +1,7 @@
 ---
 banner:
-  title: Let us solve your critical website development challenges
-  content: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam nihil enim maxime corporis cumque <br/> totam aliquid nam sint inventore optio modi neque laborum officiis necessitatibus
+  title: We are here to help you find the best car to rent.
+  content: Driving in Bali never be easiest now. Let us know what car you prefer to rent. We provide the best quality cars and services.
   image: /images/banner-art.svg
   button:
     label: "Contact Us"

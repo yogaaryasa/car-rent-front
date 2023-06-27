@@ -1,12 +1,12 @@
 {
   "site": {
-    "title": "Bigspring Light Nextjs",
+    "title": "Royeal Rent Bali",
     "base_url": "/",
     "favicon": "/images/favicon.png",
     "logo": "/images/logo.png",
-    "logo_width": "200",
-    "logo_height": "48",
-    "logo_text": "Bigspring Light"
+    "logo_width": "150",
+    "logo_height": "68",
+    "logo_text": "Royal Rent"
   },
 
   "settings": {
@@ -17,7 +17,7 @@
 
   "nav_button": {
     "enable": true,
-    "label": "Get Started",
+    "label": "Contact Us",
     "link": "/contact"
   },
 

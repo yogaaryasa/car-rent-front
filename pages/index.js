@@ -16,7 +16,7 @@ const Home = ({ frontmatter }) => {
   return (
     <Base title={title}>
       {/* Banner */}
-      <section className="section pb-[50px]">
+      <section className="section pt-[50px] pb-[50px]">
         <div className="container">
           <div className="row text-center">
             <div className="mx-auto lg:col-10">
