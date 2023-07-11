@@ -18,7 +18,7 @@
   "nav_button": {
     "enable": true,
     "label": "Contact Us",
-    "link": "/contact"
+    "link": "https://wa.me/+62895800124036?text=Hi,%0ACan%20I%20ask%20about%20the%20Rent%20Car%20and%20Tour?%0A%0AThank%20You"
   },
 
   "params": {

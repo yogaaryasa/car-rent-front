@@ -4,9 +4,11 @@ import Cta from "@layouts/components/Cta";
 import { markdownify } from "@lib/utils/textConverter";
 import Image from "next/image";
 import Link from "next/link";
-import { Autoplay, Pagination } from "swiper";
+import { Autoplay, Pagination, EffectFade, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
+import 'swiper/css/effect-fade';
+import 'swiper/css/navigation';
 import { getListPage } from "../lib/contentParser";
 
 const Home = ({ frontmatter }) => {
@@ -15,12 +17,14 @@ const Home = ({ frontmatter }) => {
 
   return (
     <Base title={title}>
+      <section className="section pb-0"></section>
       {/* Banner */}
-      <section className="section pt-[50px] pb-[50px]">
-        <div className="container">
+      <section className="section pt-[50px] pb-[100px] drop-shadow-md" style={{ backgroundImage: `url(${banner.backgroundImage})`, backgroundSize: `cover`, backgroundRepeat: `no-repeat`, backgroundPosition: 'left bottom', position: `relative` }}>
+        <div className="mt-[-50px] mb-[-100px]" style={{ position: `absolute`, minWidth: `100%`, height: `100%`, backgroundColor: `#e6e8ea`, opacity: `0.9` }}></div>
+        <div className="container relative">
           <div className="row text-center">
             <div className="mx-auto lg:col-10">
-              <h1 className="font-primary font-bold">{banner.title}</h1>
+              <h2 className="font-primary font-bold">{banner.title}</h2>
               <p className="mt-4">{markdownify(banner.content)}</p>
               {banner.button.enable && (
                 <Link
@@ -32,9 +36,9 @@ const Home = ({ frontmatter }) => {
                 </Link>
               )}
               <Image
-                className="mx-auto mt-12"
+                className="mx-auto mt-14"
                 src={banner.image}
-                width={750}
+                width={780}
                 height={390}
                 alt="banner image"
                 priority
@@ -45,17 +49,31 @@ const Home = ({ frontmatter }) => {
       </section>
 
       {/* Features */}
-      <section className="section bg-theme-light">
-        <div className="container">
-          <div className="text-center">
-            <h2>{markdownify(feature.title)}</h2>
+      <section className="section bg-theme-light feature pt-12 pb-20">
+        <div className="container" style={{ maxWidth: `1440px` }}>
+          <div className="mb-12 text-center">
+            <h3>{markdownify(feature.title)}</h3>
+            <div className="flex gap-x-16 gap-x-1 sm:grid-cols-1 lg:grid-cols-3 items-center max-w-3xl max-[450px]:max-w-xs m-auto">
+              <div className="h-px mt-2 mb-2 bg-gray-400 border-0 w-full lg:w-full max-[450px]:w-20"></div>
+              <div className="w-full"><h5 className="h-10 mt-2 font-medium">{markdownify(feature.subtitle)}</h5></div>
+              <div className="h-px mt-2 mb-2 bg-gray-400 border-0 w-full lg:w-full max-[450px]:w-20"></div>
+            </div>
           </div>
-          <div className="mt-8 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid gap-x-16 gap-y-6 sm:grid-cols-2 lg:grid-cols-4">
             {feature.features.map((item, i) => (
               <div
-                className="feature-card rounded-xl bg-white p-5 pb-8 text-center"
-                key={`feature-${i}`}
-              >
+                className="feature-card rounded-xl bg-white pt-8 pb-8 text-center" style={{ position: `relative`, overflow: `hidden` }}
+                key={`feature-${i}`}>
+                <Image
+                  className="feature-image"
+                  src={item.image}
+                  layout='fill'
+                  objectFit='cover'
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  alt=""
+                />
+                <div className="rounded-xl" style={{ backgroundColor: `#000000`, position: `absolute`, width: `100%`, height: `100%`, opacity: `0.4`, top: `0` }} ></div>
+
                 {item.icon && (
                   <Image
                     className="mx-auto"
@@ -65,10 +83,11 @@ const Home = ({ frontmatter }) => {
                     alt=""
                   />
                 )}
-                <div className="mt-4">
-                  {markdownify(item.name, "h3", "h5")}
-                  <p className="mt-3">{item.content}</p>
+                <div className="m-14">
+                  {markdownify(item.name, "h3", "h4 text-white relative")}
+                  {/* <p className="mt-5 text-white relative pl-2 pr-2">{item.content}</p> */}
                 </div>
+
               </div>
             ))}
           </div>
@@ -88,15 +107,16 @@ const Home = ({ frontmatter }) => {
                 {/* Carousel */}
                 <div className={`service-carousel ${!isOdd && "md:order-2"}`}>
                   <Swiper
-                    modules={[Autoplay, Pagination]}
+                    modules={[Autoplay, Pagination, EffectFade, Navigation]}
                     pagination={
                       service.images.length > 1 ? { clickable: true } : false
                     }
+                    effect={'fade'}
+                    navigation={true}
                     autoplay={{
                       delay: 5000,
                       disableOnInteraction: false,
                     }}
-                    init={service?.images > 1 ? false : true}
                   >
                     {/* Slides */}
                     {service?.images.map((slide, index) => (
@@ -109,9 +129,8 @@ const Home = ({ frontmatter }) => {
 
                 {/* Content */}
                 <div
-                  className={`service-content mt-5 md:mt-0 ${
-                    !isOdd && "md:order-1"
-                  }`}
+                  className={`service-content mt-5 md:mt-0 ${!isOdd && "md:order-1"
+                    }`}
                 >
                   <h2 className="font-bold leading-[40px]">{service?.title}</h2>
                   <p className="mt-4 mb-2">{service?.content}</p>

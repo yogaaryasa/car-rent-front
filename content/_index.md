@@ -1,33 +1,33 @@
 ---
 banner:
-  title: We are here to help you find the best car to rent.
-  content: Driving in Bali never be easiest now. Let us know what car you prefer to rent. We provide the best quality cars and services.
+  title: We are here to provide the best car for rent in Bali.
+  content: Driving in Bali never be easiest now. Let us know what car you need to rent, we will give you the best quality car complete with an experienced driver.
   image: /images/banner-art.svg
+  backgroundImage: /photos/bali-pagoda-indonesia.jpg
   button:
     label: "Contact Us"
     link: "/contact"
 
 # feature
 feature: 
-  title: Something You Need To Know
+  title: Our Advantages
+  subtitle: Trans Royeal Bali
   features:
-  - name: "Clean Code"
-    icon: "/images/code.svg"
+  - name: "Comfortable Car"
+    icons: "/images/code.svg"
+    image: "/photos/photo_2.jpeg"
     content: "Lorem ipsum dolor sit amet consectetur adipisicing elit quam nihil"
-  - name: "Object Oriented"
-    icon: "/images/oop.svg"
+  - name: "Friendly Drivers"
+    icons: "/images/oop.svg"
+    image: "/photos/photo_8.jpeg"
     content: "Lorem ipsum dolor sit amet consectetur adipisicing elit quam nihil"
-  - name: "24h Service"
-    icon: "/images/user-clock.svg"
+  - name: "Best Price"
+    icons: "/images/user-clock.svg"
+    image: "/photos/photo_1.jpeg"
     content: "Lorem ipsum dolor sit amet consectetur adipisicing elit quam nihil"
-  - name: "Value for Money"
-    icon: "/images/love.svg"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit quam nihil"
-  - name: "Faster Response"
-    icon: "/images/speedometer.svg"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit quam nihil"
-  - name: "Cloud Support"
-    icon: "/images/cloud.svg"
+  - name: "Always on time"
+    icons: "/images/love.svg"
+    image: "/photos/photo_4.jpeg"
     content: "Lorem ipsum dolor sit amet consectetur adipisicing elit quam nihil"
 
 # services

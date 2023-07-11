@@ -3,6 +3,12 @@
   @apply pt-[70px] pb-[70px];
 }
 
+// .feature {
+//   background-image: url('../public/images/banner-art2.svg');
+//   background-repeat: no-repeat;
+//   background-size: cover
+// }
+
 // container
 .container {
   @apply mx-auto max-w-[1140px] px-4;
@@ -52,7 +58,27 @@
 //feature card
 .feature-card {
   @apply transition-all duration-200 ease-in-out hover:shadow;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  cursor: pointer;
+
+  .feature-image{
+    -webkit-transform: scale(1);
+    -webkit-transition: all 0.3s ease-in-out;  
+
+  }
+
+  &:hover{
+    .feature-image{
+      -webkit-transform: scale(1.05);
+      -webkit-transition: all 0.3s ease-in-out;  
+
+    }
+  }
 }
+
+
 
 //swiper pagination
 .service-carousel .swiper-pagination {

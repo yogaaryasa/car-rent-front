@@ -4,6 +4,7 @@ import menu from "@config/menu.json";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
+import { IoLogoWhatsapp } from "react-icons/io5";
 
 const Header = () => {
   //router
@@ -20,7 +21,7 @@ const Header = () => {
   const { enable, label, link } = config.nav_button;
 
   return (
-    <header className="header">
+    <header className="header fixed w-full z-50 drop-shadow-md bg-[#edf6f5]">
       <nav className="navbar container">
         {/* logo */}
         <div className="order-0">
@@ -96,21 +97,19 @@ const Header = () => {
               </React.Fragment>
             ))}
             {enable && (
-              <li className="md:hidden">
-                <Link
-                  className="btn btn-primary z-0 py-[14px]"
-                  href={link}
-                  rel=""
-                >
-                  {label}
-                </Link>
+              <li className="md:hidden content-center">
+                <Link className="btn btn-primary z-0 py-[14px] px-[20px] flex flex-nowrap w-[145px] justify-center m-auto" href={link} rel="">
+              <IoLogoWhatsapp className="m-0 mr-1"/>
+              {label}
+            </Link>
               </li>
             )}
           </ul>
         </div>
         {enable && (
           <div className="d-flex order-1 ml-auto hidden min-w-[200px] items-center justify-end md:ml-0 md:flex md:order-2">
-            <Link className="btn btn-primary z-0 py-[14px]" href={link} rel="">
+            <Link className="btn btn-primary z-0 py-[14px] px-[20px] flex flex-nowrap" href={link} rel="" target="_blank">
+              <IoLogoWhatsapp className="m-0 mr-1"/>
               {label}
             </Link>
           </div>
